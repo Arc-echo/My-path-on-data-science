@@ -1,16 +1,22 @@
-def price_dot_com (website):
+import requests 
+from bs4 import BeautifulSoup
+
+def price_dot_com (brand):
     
+    website = "https://www.price.com.hk/search.php?g=A&q=" + brand + "&page=1"
     r = requests.get(website)
     soup = BeautifulSoup(r.text)
     
     # create a variable to update the pages of website later on (try/except if only one page)
     try:
-        website_end = int(website[-1])
         # get how many pages
         pages = int(soup.find("div", {"class" : "pagination-total"}).text.strip()[1: -1])
+        website_end = 1
+        
     except:
-        website_end = website[-1]
+        website_end = 1
         pages = 1
+        
     d = dict()
 
     # for each page, crawl info
@@ -36,6 +42,7 @@ def price_dot_com (website):
             website_end += 1
             if website_end <= 10:
                 website = website.replace(website[-1], str(website_end))
+
             else:
                 website = website.replace(website[-2:], str(website_end))
         except:
