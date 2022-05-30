@@ -1,5 +1,6 @@
 import random
 
+# Generate a random answer
 def generate_answer():
     answer = random.randint(1, 3)
     if answer == 1:
@@ -9,7 +10,8 @@ def generate_answer():
     elif answer == 3:
        answer = "scissors"
     return answer
-    
+
+# Get the user input and check if it is a valid input
 def get_input():
     while True:
         user_input = input("Please select one of 'rock', 'paper', or 'scissors'").lower()
@@ -20,6 +22,7 @@ def get_input():
            continue
         
 def check_ans(rounds):
+    # Record how many times that the user and the computer win seperately
     user_wins = 0
     com_wins = 0
                  
@@ -27,6 +30,7 @@ def check_ans(rounds):
         answer = generate_answer()
         user_input = get_input()
         rounds -= 1
+        # Check whether the user or the computer win until rounds become 0
         if user_input == answer:
             print("It is a tie!")
         elif user_input == "rock" and answer == "paper":
@@ -49,6 +53,7 @@ def check_ans(rounds):
             com_wins += 1
         continue
     
+    # Tell user the result
     if user_wins > com_wins:
         result = "you"
     elif com_wins > user_wins:
