@@ -1,9 +1,10 @@
-## Exercises
+# Exercises
 Some simple exercises completed during the training.
 
-1) An exercise in dictionary.py
+## 1) An exercise in dictionary.py
 A simple exercise applying dictionary data structure, by inputing a list of numbers, the function will return the number which only appears once from the list. For example, by running: the_only_one([1,2,3,2,1], the function will return 3 as it only appears once from the list.
-2) Various Exercise.py
+
+## 2) Various Exercise.py
 Various exercises done in the python lesson.
 i) fibonacci A Python program to get the Fibonacci series between 0 to i. i has to be >= 1 and is input by user. The Fibonnaci seqence is a sequence of numbers where the next number in the sequence is the sum of the previous two numbers in the sequence. The sequence looks like this: 1, 1, 2, 3, 5, 8, 13, …
 
