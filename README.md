@@ -7,4 +7,4 @@ It could be seperated to several parts:
 2) Web Crawling
 3) Pandas
 
-It is glad to share my learning path with you and feel free to explore your interesed topics!
+It is glad to share my learning path with you and feel free to explore your interested topics!
