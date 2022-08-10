@@ -1,10 +1,119 @@
-# My path on data science
-These are the codes that I completed during my course and training in Data Science. 
+# Capstone Project: Price Optimization For New Product (E-commerce)
+This project is created for allowing companies to understand the optimized price range of their new products to be uploaded on E-commerce site, so the companies could determine which products have a higher chance to be purchased and set up their marketing strategy efficiently.
 
-It could be seperated to several parts:
+## Problem Statement
+What is the optimized price range bases on specified categories, original country and other features like weight and size?
 
-1) Python Basics
-2) Web Crawling
-3) Pandas
+### Dataset
+Dataset is downloaded from HKTV MALL Databank, it provides the data of daily sales with below details:
 
-It is glad to share my learning path with you and feel free to explore your interested topics!
+1. hktv_ad_id
+2. membership_level
+3. order_number
+4. additional_parent_order
+5. order_date
+6. order_time_range
+7. delivery_date
+8. delivery_timeslot
+9. app_type
+10. device_type
+11. sales_application
+12. payment_gateway	
+13. card_class	
+14. card_issuer	
+15. card_type	
+16. area
+17. district	
+18. delivery_district	
+19. delivery_zone	
+20. estate_name_en	
+21. estate_name_chi	
+22. housing_type	
+23. order_value	
+24. delivery_cost	
+25. merchant_delivery_fee	
+26. total_discounts	
+27. credit_applied	
+28. refund_amount	
+29. refund_delivery_amount	
+30. cash_voucher_code	
+31. cash_voucher_value	
+32. cash_voucher_applied_value	
+33. paid_voucher_code	
+34. paid_voucher_value	
+35. paid_voucher_applied_value	
+36. free_delivery_voucher	
+37. free_delivery_applied_value	
+38. campaign_code	
+39. order_mall_level_discount_sum	
+40. order_mall_level_promotion_codes	
+41. order_mall_level_promotion_amounts	
+42. order_redemption_promotion_codes	
+43. order_redemption_promotion_amounts	
+44. pos_order_number	
+45. pos_payment_store_code	
+46. takeaway_store	
+47. pickup_store	
+48. waybill_no	
+49. consignment_entry_pk	
+50. consignment_order	
+51. product_id	
+52. sku_id	
+53. primary_sku_id	
+54. bundle_set	
+55. sku_name_en	
+56. sku_name_chi	
+57. brand_en	
+58. brand_chi	
+59. quantity	
+60. total_price	
+61. primary_category	
+62. primary_category_name_en	
+63. primary_category_name_chi	
+64. sub_cat_1_name_en	
+65. sub_cat_1_name_chi	
+66. sub_cat_2_name_en	
+67. sub_cat_2_name_chi	
+68. sub_cat_3_name_en	
+69. sub_cat_3_name_chi	
+70. sub_cat_4_name_en	
+71. sub_cat_4_name_chi	
+72. primary_store	store_id	
+73. store_name_en	store_name_chi	
+74. virtual_store_id	
+75. virtual_store_name_en	
+76. virtual_store_name_chi	
+77. loyalty_point_rate	
+78. sku_level_promotion_type	
+79. sku_level_promotion_code	
+80. sku_level_promotion_amount	
+81. store_level_promotion_type	
+82. store_level_promotion_code	
+83. store_level_promotion_amount	
+84. store_discount_rate	
+85. mall_level_promotion_type	
+86. mall_level_promotion_code	
+87. mall_level_promotion_amount	
+88. gift_promotion_id	
+89. rm_code	
+90. delivery_mode	
+91. delivery_information_en	
+92. delivery_information_chi	
+93. sku_warehouse_name	
+94. is_consignment	
+95. is_ecoupon	
+96. sku_ready_required_days	
+97. pickup_date	
+98. packing_spec_en	
+99. packing_spec_chi	
+100. packing_box_type	
+101. storage_type	
+102. color	
+103. size	
+104. weight	
+105. height	
+106. length	
+107. width	
+108. manufacturer_country_en	
+109. manufacturer_country_chi	
+110. removal_service_requested
