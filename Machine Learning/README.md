@@ -1,10 +1,8 @@
-# My path on data science
-These are the codes that I completed during my course and training in Data Science. 
+# Machine Learning
+Sevearl practices to help myself for understanding different models.
 
-It could be seperated to several parts:
+1) Logistic Model
+2) SVM Model
+3) Tree based model
 
-1) Python Basics
-2) Web Crawling
-3) Pandas
-
-It is glad to share my learning path with you and feel free to explore your interested topics!
+Data sets are mostly download from kaggle.
