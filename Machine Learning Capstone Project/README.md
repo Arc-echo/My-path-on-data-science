@@ -96,3 +96,26 @@ During the process of data cleansing, the columns below have been deleted:
 33. size	(All in the same value)
 34. manufacturer_country_en	
 35. manufacturer_country_chi	(Same data in English provided)
+
+The columns as below have been left as features:
+
+1. membership_level (str)
+2. card_type (str)
+3. area (str)
+4. housing_type (str)
+5. bundle_set (int)
+6. quantity (int)
+7. sub_cat_3_name_enis_consignment (str)
+8. sku_ready_required_days (int)
+9. packing_box_type (str)
+10. weight (int)
+11. height (int)
+12. length (int)
+13. width (int)
+14. is_citibank (int)
+15. order_value_from (float)
+16. order_value_to (float)
+17. any_discounts (int)
+18. any_vouchers (int)
+19. store_promotion (int)
+20. total_price_range (str) (The one targeted to be predicted)
