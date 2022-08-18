@@ -5,7 +5,7 @@ This project is created for allowing companies to understand the optimized price
 What is the optimized price range bases on specified categories, original country and other features like weight and size?
 
 ## Dataset
-Dataset is downloaded from HKTV MALL Databank, it provides the data of daily sales with below details:
+Dataset is downloaded from the databank of an E-commerce site , it provides the data of daily sales with below details:
 
 1. membership_level
 2. order_date
@@ -57,3 +57,42 @@ Dataset is downloaded from HKTV MALL Databank, it provides the data of daily sal
 48. width	
 49. manufacturer_country_en	
 50. manufacturer_country_chi	
+
+## Data Cleansing
+During the process of data cleansing, the columns below have been deleted:
+
+1. order_date (All data are for July 2022, and we could not sell products to the past)
+2. order_time_range (No big difference and we cannot control it)
+3. card_issuer (Converted to Citibank/ Non-Citibank)
+4. district	("area" is already enough for customer targeting)
+5. delivery_district	(For internal uses)
+6. delivery_zone (Same as district)
+7. order_value (Converted to "order_value_from" and "order_value_to)
+8. total_discounts (Converted to any_discounts)
+9. cash_voucher_applied_value	(Converted to any_vouchers)
+10. paid_voucher_applied_value (Converted to any_vouchers)
+11. product_id	(Prevent overfitting and undefinable)
+12. sku_id	(Undefinable)
+13. primary_sku_id	(Undefinable)
+14. brand_en	(Undefinable)
+15. brand_chi	(Same data in English provided)
+16. total_price	(Converted to total_price_range)
+17. primary_category	(All in the same value)
+18. primary_category_name_en	(All in the same value)
+19. primary_category_name_chi	(Same data in English provided)
+20. sub_cat_1_name_en	(All in the same value)
+21. sub_cat_1_name_chi	(Same data in English provided)
+22. sub_cat_2_name_en	(All in the same value)
+23. sub_cat_2_name_chi	(Same data in English provided)
+24. sub_cat_3_name_en	(All in the same value)
+25. sub_cat_3_name_chi	(Same data in English provided)
+26. sub_cat_4_name_chi	(Same data in English provided)
+27. sku_level_promotion_amount	(Undefinable and cannot control)
+28. store_level_promotion_amount	(Converted to "store_promotion")
+29. mall_level_promotion_amount (All in the same value)
+30. packing_spec_en	 (Hard to classify and "weight" could do the same effect)
+31. packing_spec_chi	(Same data in English provided)
+32. storage_type	("packing_box_type" could do the same effect while "storage_type" has missing values)
+33. size	(All in the same value)
+34. manufacturer_country_en	
+35. manufacturer_country_chi	(Same data in English provided)
