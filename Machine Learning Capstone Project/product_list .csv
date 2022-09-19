@@ -1,0 +1,9 @@
+bundle_set,quantity,sub_cat_3_name_en,sku_ready_required_days,packing_box_type,weight,height,length,width,manufacturer_country_en,is_weekend,any_promotion
+0,1,Frozen Fish,0,FROZEN,270,15,140,330,JAPAN,0,0
+0,1,Frozen Fish,0,FROZEN,270,15,140,330,JAPAN,1,1
+0,1,Frozen Seashell,0,FROZEN,1000,50,200,370,JAPAN,0,0
+0,1,Frozen Seashell,0,FROZEN,1000,50,200,370,JAPAN,1,1
+0,1,Frozen Shrimp and Crab,0,FROZEN,700,80,200,370,JAPAN,0,0
+0,1,Frozen Shrimp and Crab,0,FROZEN,700,80,200,370,JAPAN,1,1
+0,1,Other Frozen Food,0,FROZEN,250,60,160,350,JAPAN,0,0
+0,1,Other Frozen Food,0,FROZEN,250,60,160,350,JAPAN,1,1
