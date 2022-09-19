@@ -5,115 +5,117 @@ This project is created for allowing companies to understand the optimized price
 What is the optimized price range bases on specified categories, original country and other features like weight and size?
 
 ## Dataset
-Dataset is downloaded from HKTV MALL Databank, it provides the data of daily sales with below details:
+Dataset is downloaded from the databank of an E-commerce site , it provides the data of daily sales with below details:
 
-1. hktv_ad_id
-2. membership_level
-3. order_number
-4. additional_parent_order
-5. order_date
-6. order_time_range
-7. delivery_date
-8. delivery_timeslot
-9. app_type
-10. device_type
-11. sales_application
-12. payment_gateway	
-13. card_class	
-14. card_issuer	
-15. card_type	
-16. area
-17. district	
-18. delivery_district	
-19. delivery_zone	
-20. estate_name_en	
-21. estate_name_chi	
-22. housing_type	
-23. order_value	
-24. delivery_cost	
-25. merchant_delivery_fee	
-26. total_discounts	
-27. credit_applied	
-28. refund_amount	
-29. refund_delivery_amount	
-30. cash_voucher_code	
-31. cash_voucher_value	
-32. cash_voucher_applied_value	
-33. paid_voucher_code	
-34. paid_voucher_value	
-35. paid_voucher_applied_value	
-36. free_delivery_voucher	
-37. free_delivery_applied_value	
-38. campaign_code	
-39. order_mall_level_discount_sum	
-40. order_mall_level_promotion_codes	
-41. order_mall_level_promotion_amounts	
-42. order_redemption_promotion_codes	
-43. order_redemption_promotion_amounts	
-44. pos_order_number	
-45. pos_payment_store_code	
-46. takeaway_store	
-47. pickup_store	
-48. waybill_no	
-49. consignment_entry_pk	
-50. consignment_order	
-51. product_id	
-52. sku_id	
-53. primary_sku_id	
-54. bundle_set	
-55. sku_name_en	
-56. sku_name_chi	
-57. brand_en	
-58. brand_chi	
-59. quantity	
-60. total_price	
-61. primary_category	
-62. primary_category_name_en	
-63. primary_category_name_chi	
-64. sub_cat_1_name_en	
-65. sub_cat_1_name_chi	
-66. sub_cat_2_name_en	
-67. sub_cat_2_name_chi	
-68. sub_cat_3_name_en	
-69. sub_cat_3_name_chi	
-70. sub_cat_4_name_en	
-71. sub_cat_4_name_chi	
-72. primary_store	store_id	
-73. store_name_en	store_name_chi	
-74. virtual_store_id	
-75. virtual_store_name_en	
-76. virtual_store_name_chi	
-77. loyalty_point_rate	
-78. sku_level_promotion_type	
-79. sku_level_promotion_code	
-80. sku_level_promotion_amount	
-81. store_level_promotion_type	
-82. store_level_promotion_code	
-83. store_level_promotion_amount	
-84. store_discount_rate	
-85. mall_level_promotion_type	
-86. mall_level_promotion_code	
-87. mall_level_promotion_amount	
-88. gift_promotion_id	
-89. rm_code	
-90. delivery_mode	
-91. delivery_information_en	
-92. delivery_information_chi	
-93. sku_warehouse_name	
-94. is_consignment	
-95. is_ecoupon	
-96. sku_ready_required_days	
-97. pickup_date	
-98. packing_spec_en	
-99. packing_spec_chi	
-100. packing_box_type	
-101. storage_type	
-102. color	
-103. size	
-104. weight	
-105. height	
-106. length	
-107. width	
-108. manufacturer_country_en	
-109. manufacturer_country_chi	
-110. removal_service_requested
+1. membership_level
+2. order_date
+3. order_time_range
+4. card_class	
+5. card_issuer
+6. card_type	
+7. area
+8. district	
+9. delivery_district	
+10. delivery_zone
+11. housing_type	
+12. order_value	
+13. total_discounts	
+14. cash_voucher_applied_value	
+15. paid_voucher_applied_value
+16. product_id	
+17. sku_id	
+18. primary_sku_id	
+19. bundle_set	
+20. brand_en	
+21. brand_chi	
+22. quantity	
+23. total_price	
+24. primary_category	
+25. primary_category_name_en	
+26. primary_category_name_chi	
+27. sub_cat_1_name_en	
+28. sub_cat_1_name_chi	
+29. sub_cat_2_name_en	
+30. sub_cat_2_name_chi	
+31. sub_cat_3_name_en	
+32. sub_cat_3_name_chi	
+33. sub_cat_4_name_en	
+34. sub_cat_4_name_chi	
+35. sku_level_promotion_amount	
+36. store_level_promotion_amount	
+37. mall_level_promotion_amount
+38. is_consignment	
+39. sku_ready_required_days
+40. packing_spec_en	
+41. packing_spec_chi	
+42. packing_box_type	
+43. storage_type	
+44. size	
+45. weight	
+46. height	
+47. length	
+48. width	
+49. manufacturer_country_en	
+50. manufacturer_country_chi	
+
+## Data Cleansing
+During the process of data cleansing, the columns below have been deleted:
+
+1. order_date (All data are for July 2022, and we could not sell products to the past)
+2. order_time_range (No big difference and we cannot control it)
+3. card_issuer (Converted to Citibank/ Non-Citibank)
+4. district	("area" is already enough for customer targeting)
+5. delivery_district	(For internal uses)
+6. delivery_zone (Same as district)
+7. order_value (Converted to "order_value_from" and "order_value_to)
+8. total_discounts (Converted to any_discounts)
+9. cash_voucher_applied_value	(Converted to any_vouchers)
+10. paid_voucher_applied_value (Converted to any_vouchers)
+11. product_id	(Prevent overfitting and undefinable)
+12. sku_id	(Undefinable)
+13. primary_sku_id	(Undefinable)
+14. brand_en	(Undefinable)
+15. brand_chi	(Same data in English provided)
+16. total_price	(Converted to total_price_range)
+17. primary_category	(All in the same value)
+18. primary_category_name_en	(All in the same value)
+19. primary_category_name_chi	(Same data in English provided)
+20. sub_cat_1_name_en	(All in the same value)
+21. sub_cat_1_name_chi	(Same data in English provided)
+22. sub_cat_2_name_en	(All in the same value)
+23. sub_cat_2_name_chi	(Same data in English provided)
+24. sub_cat_3_name_en	(All in the same value)
+25. sub_cat_3_name_chi	(Same data in English provided)
+26. sub_cat_4_name_chi	(Same data in English provided)
+27. sku_level_promotion_amount	(Undefinable and cannot control)
+28. store_level_promotion_amount	(Converted to "store_promotion")
+29. mall_level_promotion_amount (All in the same value)
+30. packing_spec_en	 (Hard to classify and "weight" could do the same effect)
+31. packing_spec_chi	(Same data in English provided)
+32. storage_type	("packing_box_type" could do the same effect while "storage_type" has missing values)
+33. size	(All in the same value)
+34. manufacturer_country_en	
+35. manufacturer_country_chi	(Same data in English provided)
+
+The columns as below have been left as features:
+
+1. membership_level (str)
+2. card_type (str)
+3. area (str)
+4. housing_type (str)
+5. bundle_set (int)
+6. quantity (int)
+7. sub_cat_3_name_enis_consignment (str)
+8. sku_ready_required_days (int)
+9. packing_box_type (str)
+10. weight (int)
+11. height (int)
+12. length (int)
+13. width (int)
+14. is_citibank (int)
+15. order_value_from (float)
+16. order_value_to (float)
+17. any_discounts (int)
+18. any_vouchers (int)
+19. store_promotion (int)
+20. total_price_range (str) (The one targeted to be predicted)

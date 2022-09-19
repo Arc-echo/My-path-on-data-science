@@ -6,5 +6,7 @@ It could be seperated to several parts:
 1) Python Basics
 2) Web Crawling
 3) Pandas
+4) Machine Learning
+5) Machine Learning Capstone Project
 
 It is glad to share my learning path with you and feel free to explore your interested topics!
